@@ -1,0 +1,34 @@
+{
+  "Project": {
+    "Name": "conemu",
+    "Root": "C:\\per\\pro\\conemu",
+    "TaskName": "Erno_CONEMU",
+    "ShortcutName": "CONEMU",
+    "ConEmuPath": "C:\\Program Files\\ConEmu\\ConEmu64.exe",
+    "TaskDirParam": "/dir \"C:\\per\\pro\\conemu\""
+  },
+  "Terminals": [
+    {
+      "SubDir": ".",
+      "Title": "Root",
+      "EnvBat": "env_conemu.bat"
+    },
+    {
+      "SubDir": ".",
+      "Title": "Git",
+      "EnvBat": "env_conemu.bat"
+    },
+    {
+      "SubDir": "src",
+      "Title": "Src",
+      "EnvBat": "env_conemu.bat"
+    },
+    {
+      "SubDir": "build",
+      "Title": "Build",
+      "EnvBat": "env_conemu.bat"
+    }
+  ]
+}
+
+

@@ -1,0 +1,33 @@
+Interpretación de los campos
+
+Project.Name → nombre corto lógico del proyecto (rpt).
+
+Project.Root → root del proyecto (C:\per\pro\rpt).
+
+Project.TaskName → nombre de la Task en ConEmu (Erno_RPT → luego será {Erno_RPT}).
+
+Project.ShortcutName → nombre del acceso directo (RPT → RPT.lnk).
+
+Project.ConEmuPath → ruta al ejecutable de ConEmu.
+
+Project.TaskDirParam → lo que hoy ponés en Task parameters (/dir "C:\per\pro\rpt").
+
+Cada entrada de Terminals define una pestaña de ConEmu:
+
+SubDir
+
+"." → se queda en %ConEmuWorkDir%.
+
+Cualquier otra cosa → cd /d "%ConEmuWorkDir%\SubDir".
+
+Title → nombre de la pestaña (lo que ponés en -new_console:t:"Title").
+
+EnvBat → el .bat que se llama desde env\ (por ahora uno solo, env_project.bat).
+
+
+
+
+Más adelante, con esta info vamos a generar líneas como:
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%\src"" -new_console:t:"Src"
+

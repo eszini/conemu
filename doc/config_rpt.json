@@ -1,0 +1,49 @@
+{
+  "Project": {
+    "Name": "rpt",
+    "Root": "C:\\per\\pro\\rpt",
+    "TaskName": "Erno_RPT",
+    "ShortcutName": "RPT",
+    "ConEmuPath": "C:\\Program Files\\ConEmu\\ConEmu64.exe",
+    "TaskDirParam": "/dir \"C:\\per\\pro\\rpt\""
+  },
+  "Terminals": [
+    {
+      "SubDir": "pipeline",
+      "Title": "Pipeline",
+      "EnvBat": "env_project.bat"
+    },
+    {
+      "SubDir": ".",
+      "Title": "Aux",
+      "EnvBat": "env_project.bat"
+    },
+    {
+      "SubDir": ".",
+      "Title": "Root",
+      "EnvBat": "env_project.bat"
+    },
+    {
+      "SubDir": ".",
+      "Title": "Git",
+      "EnvBat": "env_project.bat"
+    },
+    {
+      "SubDir": "src",
+      "Title": "Src",
+      "EnvBat": "env_project.bat"
+    },
+    {
+      "SubDir": "Build",
+      "Title": "Build1",
+      "EnvBat": "env_project.bat"
+    },
+    {
+      "SubDir": "Build",
+      "Title": "Build2",
+      "EnvBat": "env_project.bat"
+    }
+  ]
+}
+
+

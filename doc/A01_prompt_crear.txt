@@ -1,0 +1,91 @@
+consulta 
+estoy trabajando con conemu 
+tengo una estructura de directorios en comun para un conjunto de proyectos 
+
+directorios / destino 
+c:\per                  root de todo 
+c:\per\pro           root de todos los proyectos 
+c:\per\pro\rpt     root del proyecto de reportes multitool de hitachi 
+
+dentro del directorio del proyecto, suelo tener 
+src          fuentes 
+build       todos los objetos para crear ejecutables, normalmente, los ejecutables los dejo aca 
+env          aqui van todos los scripts que crean variables de ambientes, si es que las necesito 
+doc          documentacion 
+
+despues 
+para utilizar este "ambiente" , creo una "task" en conemu 
+y ahi configuo las terminales que quiero usar, 
+normalmente 
+root        terminal que se para en el root del proyecto 
+src          terminal en el src 
+build       terminal en el build 
+
+entonces, 
+1) creo una task normalmente "Erno_rpt"    (uso el nombre del proyecto : rpt )
+2) creo un shorcut, 
+target:    "C:\Program Files\ConEmu\ConEmu64.exe" -run {Erno_RPT}
+start in:   "C:\Program Files\ConEmu\"
+
+3) en la task 
+en el campo "tak parameters" pong esto:    /dir "c:\per\pro\rpt"      (pongo el directorio root del proyecto )
+
+4) configuro las terminales :
+en este caso, al abrir cada terminal, ejecuta  c:\per\pro\rpt\env\env_project.bat
+se para en un directorio que cuelga  en c:\per\pro\prt   
+y le pone un nombre : 
+en este ejemplo, terminales 
+pipeline, aux, root, git, src,build1,build2 
+
+
+
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%\pipeline"" -new_console:t:"Pipeline"
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%"" -new_console:t:"Aux"
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%"" -new_console:t:"Root"
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%"" -new_console:t:"Git"
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%\src"" -new_console:t:"src"
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%\Build"" -new_console:t:"Build1"
+
+cmd.exe /k "call "%ConEmuWorkDir%\env\env_project.bat" & cd /d "%ConEmuWorkDir%\Build"" -new_console:t:"Build2"
+
+
+
+mi consulta es :
+puedo armar un script, o programa en c++. o .NET , lo que mas te parezca 
+de manera que yo indique , ya sea por pantalla on por un archivo config_project.txt 
+que me arme todo lo relacionado a conemu ?
+
+por ejemplo, 
+en el archivo de configuracion, yo prondria. _
+
+
+
+nombre de proyecto :   rpt 
+root :                              c:\per\pro\rpt 
+
+task:                                Erno_RPT
+parametro dir                 /dir "c:\per\pro\rpt" 
+shortcut_name               RPT
+
+terminales  (para pipeline, aux, root, git, src,build1,build2  )
+numero, directorio raiz, directorio, nombre de la pantalla, nombre del bat de config a ejecutar 
+1, %ConEmuWorkDir%\, pipeline, pipeline , env_project.bat 
+2, %ConEmuWorkDir%\, aux, aux, env_projec.at 
+
+y con esta info , obtener alguna tool que me genere 
+a) el shortcut 
+b) la task
+c) las lineas de configuracion en la task de todas las terminales 
+
+
+
+me haces un roadmap de como podemos construir una herramienta (script, programa etc )
+que me genere ese shortcut ?
+
+

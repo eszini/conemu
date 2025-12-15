@@ -1,0 +1,20 @@
+me gustaria probar con una herramienta en C# o .NET8 ... (tengo visual studio 2022 instalado )
+
+estaria bueno que me digas 
+
+1) cuales son los requisitos (en un MD tal vez ? )
+2) nos pongamos de acuerdo en como seria el archivo de configuracion 
+3) hagamos un primer prototipo, avanzando de a poco 
+por ejemplo:
+versiones 
+a) que lea el archivo de conifguracion y lo imprima por pantalla 
+b) agregamos que genere el shortcut !
+c) aca , como vos digas ... pero seguiria con armar la task ...
+
+pero necesito pls !
+un paso a paso
+asi aprendo, pruebo, te puedo preguntar, darte feedback y avanzamos seguro 
+
+empezamos asi ?
+
+

@@ -1,0 +1,15 @@
+# Build artifacts
+bin/
+obj/
+build/
+
+# Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Otros temporales
+*.log
+
